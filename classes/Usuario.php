@@ -2,13 +2,12 @@
 
 require_once 'Conexao.php';
 
-class Produto{
+class Usuario{
 
     public $id;
     public $nome;
-    public $descricao;
-    public $status;
-    public $data;
+    public $email;
+    public $senha;
 
     public function __construct($id = false){
         if($id){
@@ -19,7 +18,7 @@ class Produto{
 
     public function listar()
     {
-        $sql = "select * from produto order by nome";
+        $sql = "select * from usuario order by id";
         $conexao = Conexao::getConexao(); // Os dois pontos são utilizadas caso a função seja STATIC
         $resultado = $conexao->query($sql);
         return $resultado->fetchAll();
@@ -28,14 +27,14 @@ class Produto{
 
     public function inserir ()
     {
-        $sql = "insert into produto(nome,descricao, status) values (:nome, :descricao, :status)";
+        $sql = "insert into usuario(nome, email, senha) values (:nome, :email, :senha)";
 
         $conexao = Conexao::getConexao();
 
         $ps = $conexao->prepare($sql);
         $ps->bindValue(':nome', $this->nome);
-        $ps->bindValue(':descricao', $this->descricao);
-        $ps->bindValue(':status', $this->status);
+        $ps->bindValue(':email', $this->email);
+        $ps->bindValue(':senha', $this->senha);
 
         $resultado = $ps->execute();
         if($resultado == 0){
@@ -46,36 +45,35 @@ class Produto{
     }
 
     public function carregar(){
-        $sql = "select * from produto where id = {$this->id}";
+        $sql = "select * from usuario where id = {$this->id}";
         $conexao = Conexao::getConexao(); // Os dois pontos são utilizadas caso a função seja STATIC
         $resultado = $conexao->query($sql);
         $lista = $resultado->fetchAll();
         foreach($lista as $linha){
             $this->nome = $linha['nome']; 
-            $this->descricao = $linha['descricao']; 
-            $this->status = $linha['status'];
-            $this->data = $linha['data'];
+            $this->email = $linha['email']; 
+            $this->senha = $linha['senha'];
         }
     }
 
     public function atualizar(){
-        $sql = "update produto
+        $sql = "update usuario
                     set nome = '{$this->nome}',
-                        descricao = '{$this->descricao}',
-                        status = '{$this->status}'
+                        email = '{$this->email}',
+                        senha = '{$this->senha}'
                 where id = {$this->id}";
         $conexao = Conexao::getConexao();
         $conexao->exec($sql);
-        header('location: produto-listar.php'); //Redirecionamento após atualizar - após clicar no botão salvar
+        header('location: usuario-listar.php'); //Redirecionamento após atualizar - após clicar no botão salvar
 
     }
 
     public function excluir(){
-        $sql = "delete from produto where id = {$this->id}";
+        $sql = "delete from usuario where id = {$this->id}";
         $conexao = Conexao::getConexao();
         $conexao->exec($sql);
 
-        header("location: produto-listar.php");
+        header("location: usuario-listar.php");
 
     }
 }

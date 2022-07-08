@@ -25,14 +25,14 @@ if(isset($_POST['salvar'])){
     $msg = "Registro inserido com sucesso.";
     header("location: produto-listar.php?mensagem={$msg}");
 }   
-require_once 'cabecalho.php';
+require_once 'layouts/cabecalho.php';
 
 ?>
     <title> Cadastro de produto</title>
 </head>
 <body>
     <?php 
-        require_once 'nav-body.php'; 
+        require_once 'layouts/menu.php'; 
     ?>
 
     <div class="container-fluid pt-3">
@@ -62,16 +62,14 @@ require_once 'cabecalho.php';
                     <i class="fas fa-save"></i>  Salvar
                 </button>
 
-                <a href="#">
                     <button type="button" class="btn btn-dark">
                         <a href="produto-listar.php">
                             <i class="fas fa-undo"></i> Voltar
                         </a>
                         
                     </button>
-                </a>
         </form>
     </div>
 <?php 
-    require_once 'rodape.php';
+    require_once 'layouts/rodape.php';
 ?>

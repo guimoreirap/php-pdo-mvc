@@ -28,13 +28,13 @@ if(isset($_POST['salvar'])){
 }   
 
     //Chamada do cabecalho do HTML
-    require_once 'cabecalho.php';
+    require_once 'layouts/cabecalho.php';
 ?>
     <title> Produto alterar</title>
 </head>
 <body>
     <?php 
-        require_once 'nav-body.php'; 
+        require_once 'layouts/menu.php'; 
     ?>
 
     <div class="container-fluid pt-3">
@@ -94,5 +94,5 @@ if(isset($_POST['salvar'])){
     </div>
     
 <?php 
-    require_once 'rodape.php';
+    require_once 'layouts/rodape.php';
 ?>
