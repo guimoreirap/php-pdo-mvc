@@ -19,7 +19,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="produto-listar.php">Produto</a></li>
                     <li><a class="dropdown-item" href="usuario-listar.php">Usuário</a></li>
-                    <li><a class="dropdown-item" href="#">Categoria de Produto</a></li>
+                    <li><a class="dropdown-item" href="produtocategoria-listar.php">Categoria de Produto</a></li>
                     <li><a class="dropdown-item" href="#">Cliente</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">Outro Cadastro</a></li>
