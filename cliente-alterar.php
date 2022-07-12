@@ -32,6 +32,17 @@ if(isset($_POST['salvar'])){
     //Chamada do cabecalho do HTML
     require_once 'layouts/cabecalho.php';
 ?>
+    <!-- Mask para telefone e CPF-->
+    <script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mask.min.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#cpfcnpj").mask("000.000.000-00");
+            $("#telefone").mask("(00) 00000-0000");
+        })
+    </script>
+    
     <title> Produto alterar</title>
 </head>
 <body>

@@ -30,7 +30,18 @@ if(isset($_POST['salvar'])){
 }   
 require_once 'layouts/cabecalho.php';
 
-?>
+?>  
+    <!-- Mask para telefone e CPF-->
+    <script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mask.min.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#cpfcnpj").mask("000.000.000-00");
+            $("#telefone").mask("(00) 00000-0000");
+        })
+    </script>
+
     <title> Cadastro de cliente</title>
 </head>
 <body>
@@ -77,6 +88,10 @@ require_once 'layouts/cabecalho.php';
                     </button>
         </form>
     </div>
+
+    
+
 <?php 
+    
     require_once 'layouts/rodape.php';
 ?>
