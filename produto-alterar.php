@@ -30,6 +30,7 @@ if(isset($_POST['salvar'])){
     //Chamada do cabecalho do HTML
     require_once 'layouts/cabecalho.php';
 ?>
+    
     <title> Produto alterar</title>
 </head>
 <body>

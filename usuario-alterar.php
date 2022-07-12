@@ -40,6 +40,7 @@
     require_once 'layouts/cabecalho.php';
   
 ?>
+
     <title>Alterar usuário</title>
 </head>
 <body>

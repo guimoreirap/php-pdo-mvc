@@ -28,6 +28,7 @@ if(isset($_POST['salvar'])){
 require_once 'layouts/cabecalho.php';
 
 ?>
+
     <title> Cadastro de produto</title>
 </head>
 <body>
